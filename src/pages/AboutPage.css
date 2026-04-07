@@ -1,0 +1,134 @@
+.about-page {
+  background: linear-gradient(180deg, #070916, #0d1020, #11162a);
+  color: white;
+}
+
+/* HERO */
+.about-hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 6%;
+  background: url("https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1800&q=80")
+    center/cover no-repeat;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(10, 10, 30, 0.7), rgba(10, 10, 30, 0.9));
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.about-tag {
+  color: #ff49ea;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.about-content h1 {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  padding: 80px 6%;
+}
+
+.about-left h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ff49ea, #7d4ce3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-left p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* GLASS CARD */
+.about-glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+}
+
+.about-glass-card h3 {
+  margin-bottom: 20px;
+}
+
+.about-glass-card li {
+  margin-bottom: 10px;
+}
+
+/* FEATURES */
+.features-section {
+  padding: 60px 6%;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card svg {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+/* HIGHLIGHT */
+.highlight-section {
+  padding: 60px 6%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.highlight-box {
+  background: linear-gradient(90deg, rgba(125,76,227,0.2), rgba(255,73,234,0.2));
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
