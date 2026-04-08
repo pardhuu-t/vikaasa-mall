@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route
+ } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -17,6 +18,7 @@ import AboutPage from "./pages/AboutPage";
 function App() {
   return (
     <BrowserRouter>
+   
       <div className="app">
         <Navbar />
 
