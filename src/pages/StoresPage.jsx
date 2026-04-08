@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState,useEffect } from "react";
 import StoresHero from "../components/StoresHero";
 import StoreCard from "../components/StoreCard";
 import storesData from "../data/StoresData";
@@ -95,6 +95,9 @@ function StoreCategoryTabs({ categories, activeCategory, onCategoryChange }) {
 // }
 
 function StoresPage() {
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
 

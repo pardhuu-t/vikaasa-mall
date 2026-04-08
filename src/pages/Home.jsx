@@ -1,10 +1,13 @@
-import React from "react";
+// import React from "react";
 import WelcomeBanner from "../components/WelcomeBanner";
 import ExperienceCard from "../components/ExperienceCard";
 import HappeningCard from "../components/HappeningCard";
 import BrandSlider from "../components/BrandSlider";
-
+import React, { useEffect } from "react";
 function Home() {
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
   const happenings = [
     {
       image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
