@@ -22,22 +22,22 @@ function Home() {
     {
       image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
       alt: "Vikaasa anniversary celebration",
-      year: "2025",
+      year: "2026",
       title: "Vikaasa 1st Anniversary Celebrations",
       description: "A joyful celebration filled with festive decor, guests, and memorable moments.",
     },
     {
       image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1200&q=80",
       alt: "International chess day",
-      year: "2025",
-      title: "International Chess Day 2025",
+      year: "2026",
+      title: "International Chess Day 2026",
       description: "An exciting event bringing strategy, talent, and competition to the mall.",
     },
     {
       image: "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1200&q=80",
       alt: "Organ donation event",
-      year: "2025",
-      title: "Indian Organ Donation 2025",
+      year: "2026",
+      title: "Indian Organ Donation 2026",
       description: "A meaningful awareness drive uniting the community for a noble cause.",
     },
   ];
