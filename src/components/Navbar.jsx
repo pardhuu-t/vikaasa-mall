@@ -1,38 +1,62 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Navbar.css";
-import { HiOutlineMail } from "react-icons/hi";
+import { HiOutlineMail, HiMenu, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showDropdown: false
+      showDropdown: false,
+      mobileMenuOpen: false
     };
   }
 
   handleMouseEnter = () => {
-    this.setState({ showDropdown: true });
+    if (window.innerWidth > 900) {
+      this.setState({ showDropdown: true });
+    }
   };
 
   handleMouseLeave = () => {
-    this.setState({ showDropdown: false });
+    if (window.innerWidth > 900) {
+      this.setState({ showDropdown: false });
+    }
+  };
+
+  handleDropdownToggle = () => {
+    if (window.innerWidth <= 900) {
+      this.setState((prevState) => ({
+        showDropdown: !prevState.showDropdown
+      }));
+    }
+  };
+
+  handleMobileMenuToggle = () => {
+    this.setState((prevState) => ({
+      mobileMenuOpen: !prevState.mobileMenuOpen
+    }));
+  };
+
+  closeMenus = () => {
+    this.setState({
+      mobileMenuOpen: false,
+      showDropdown: false
+    });
   };
 
   handleScrollTop = () => {
     window.scrollTo(0, 0);
+    this.closeMenus();
   };
 
   render() {
     const { logoSrc, logoAlt } = this.props;
-    const { showDropdown } = this.state;
+    const { showDropdown, mobileMenuOpen } = this.state;
 
     return (
       <nav className="navbar">
-        <div className="left-shape"></div>
-        <div className="right-shape"></div>
-
         <div className="navbar-overlay"></div>
 
         <div className="navbar-container">
@@ -42,52 +66,73 @@ class Navbar extends Component {
             </Link>
           </div>
 
-          <div className="navbar-links">
-            
+          <button
+            className="menu-toggle"
+            onClick={this.handleMobileMenuToggle}
+            aria-label="Toggle navigation"
+          >
+            {mobileMenuOpen ? <HiX /> : <HiMenu />}
+          </button>
 
+          <div className={`navbar-links ${mobileMenuOpen ? "active" : ""}`}>
             <Link to="/stores" onClick={this.handleScrollTop}>
               Stores
             </Link>
-
-          
-
-            
 
             <div
               className="dropdown-wrapper"
               onMouseEnter={this.handleMouseEnter}
               onMouseLeave={this.handleMouseLeave}
             >
-              <Link to="/happenings" className="has-dropdown" onClick={this.handleScrollTop}>
-                Happenings <span className="dropdown-arrow">⌄</span>
-              </Link>
+              <button
+                type="button"
+                className="has-dropdown dropdown-trigger"
+                onClick={this.handleDropdownToggle}
+              >
+                Happenings <span className={`dropdown-arrow ${showDropdown ? "rotate" : ""}`}>⌄</span>
+              </button>
 
               {showDropdown && (
                 <div className="dropdown-menu">
                   <Link to="/happenings/events" onClick={this.handleScrollTop}>
                     Events
                   </Link>
-                  <Link to="/happenings/news-spotlight" onClick={this.handleScrollTop}>
+                  <Link
+                    to="/happenings/news-spotlight"
+                    onClick={this.handleScrollTop}
+                  >
                     News & Spotlight
                   </Link>
-                  <Link to="/happenings/promotions-offers" onClick={this.handleScrollTop}>
+                  <Link
+                    to="/happenings/promotions-offers"
+                    onClick={this.handleScrollTop}
+                  >
                     Promotions & Offers
                   </Link>
-                  
                 </div>
               )}
             </div>
+
+            <div className="navbar-contact mobile-contact">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=vikaasamall@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <HiOutlineMail className="mail-icon" />
+              </a>
+            </div>
           </div>
 
-          <div className="navbar-contact">
+          <div className="navbar-contact desktop-contact">
             <span className="contact-divider"></span>
             <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=vikaasamall@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <HiOutlineMail className="mail-icon" />
-</a>
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=vikaasamall@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <HiOutlineMail className="mail-icon" />
+            </a>
           </div>
         </div>
       </nav>
