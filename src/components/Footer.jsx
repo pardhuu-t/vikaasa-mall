@@ -36,7 +36,7 @@ function Footer({ logoSrc, facebookUrl, instagramUrl, youtubeUrl }) {
                 <FaMapMarkerAlt className="footer-location-icon" />
                 <h3>Visit Us</h3>
               </div>
-              <p>Door No. 15/23, Grand Trunk Road, Dargamitta
+              <p>Door No. 15/23, Grand Trunk Road, B.V.Nagar
               Vellore, Tamilnadu 6320143</p>
 
               <h2 className="footer-highlight">Feedback & Suggestions</h2>
