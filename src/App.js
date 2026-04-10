@@ -10,7 +10,6 @@ import StoreDetailPage from "./pages/StoreDetailPage";
 import EventsPage from "./pages/EventsPage";
 import NewsSpotlightPage from "./pages/NewsSpotlightPage";
 import PromotionsOffersPage from "./pages/PromotionsOffersPage";
-// import EnvironmentalSustainabilityPage from "./pages/EnvironmentalSustainabilityPage";
 import HappeningsPage from "./pages/HappeningsPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
